@@ -6,7 +6,7 @@ using MediatR;
 
 namespace Catalog.Application.Handlers;
 
-public class GetAllBrandsHandler : IRequestHandler<GetAllBrandsQuery, IList<BrandResponse>>
+public class GetAllBrandsHandler : IRequestHandler<GetAllBrandsQuery, IList<BrandDto>>
 {
     private readonly IBrandRepository _repository;
     private readonly IMapper _mapper;
@@ -17,10 +17,10 @@ public class GetAllBrandsHandler : IRequestHandler<GetAllBrandsQuery, IList<Bran
         _mapper = mapper;
     }
     
-    public async Task<IList<BrandResponse>> Handle(GetAllBrandsQuery request, CancellationToken cancellationToken)
+    public async Task<IList<BrandDto>> Handle(GetAllBrandsQuery request, CancellationToken cancellationToken)
     {
         var brands = await _repository.GetAllBrands();
-        var response = _mapper.Map<IList<BrandResponse>>(brands);
+        var response = _mapper.Map<IList<BrandDto>>(brands);
         return response;
     }
 }
