@@ -3,7 +3,4 @@ using MediatR;
 
 namespace Catalog.Application.Queries;
 
-public class GetAllProductsQuery : IRequest<IList<ProductDto>>
-{
-    
-}
+public sealed record GetAllProductsQuery : IRequest<IList<ProductDto>>;

@@ -3,4 +3,4 @@ using MediatR;
 
 namespace Catalog.Application.Queries;
 
-public sealed record GetAllBrandsQuery : IRequest<IList<BrandDto>>;
+public sealed record GetProductQuery(string Id) : IRequest<ProductDto>;
