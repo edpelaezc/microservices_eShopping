@@ -38,7 +38,7 @@ public class ProductRepository : IProductRepository, IBrandRepository, ITypesRep
 
     public async Task<IEnumerable<Product>> GetProductByBrand(string brandName)
     {
-        var filter = Builders<Product>.Filter.Eq(p => p.Brands.Name, brandName);
+        var filter = Builders<Product>.Filter.Eq(p => p.Brands!.Name, brandName);
         return await _context.Products.Find(filter).ToListAsync();
     }
 

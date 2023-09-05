@@ -8,7 +8,7 @@ public static class CatalogMapper
     {
         var config = new MapperConfiguration(config =>
         {
-            config.ShouldMapProperty = p => p.GetMethod.IsPublic || p.GetMethod.IsAssembly;
+            config.ShouldMapProperty = p => p.GetMethod!.IsPublic || p.GetMethod.IsAssembly;
             config.AddProfile<ProductMappingProfile>();
         });
 
