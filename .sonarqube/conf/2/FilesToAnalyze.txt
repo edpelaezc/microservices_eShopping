@@ -1,0 +1,9 @@
+﻿/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Data/BrandContextSeed.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Data/CatalogContext.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Data/ICatalogContext.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Data/ProductContextSeed.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Data/TypeContextSeed.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Repositories/ProductRepository.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Data/SeedData/brands.json
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Data/SeedData/products.json
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Data/SeedData/types.json

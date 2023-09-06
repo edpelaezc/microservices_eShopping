@@ -21,7 +21,7 @@ public class GetAllBrandsHandler : IRequestHandler<GetAllBrandsQuery, IList<Bran
     {
         var brands = await _repository.GetAllBrands();
         var response = 
-            CatalogMapper.mapper.
+            CatalogMapper.Mapper.
             Map<IList<ProductBrand>, IList<BrandDto>>(brands.ToList());
         return response;
     }

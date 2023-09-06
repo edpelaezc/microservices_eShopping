@@ -1,0 +1,10 @@
+﻿/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.API/Extensions/ServiceExtensions.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.API/Program.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.API/obj/Debug/net7.0/Catalog.API.GlobalUsings.g.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.API/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.API/obj/Debug/net7.0/Catalog.API.AssemblyInfo.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.API/appsettings.Development.json
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.API/appsettings.json
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/.dockerignore
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.API/Dockerfile
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.API/Properties/launchSettings.json

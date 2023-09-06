@@ -1,0 +1,15 @@
+x
+o/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/BaseEntity.csutf-8ç
+É/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/Exceptions/BadRequestException.csutf-8ã
+Å/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/Exceptions/NotFoundException.csutf-8í
+à/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/Exceptions/ProductNotFoundException.csutf-8î
+ä/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/Exceptions/ResourceCreationBadRequest.csutf-8u
+l/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/Product.csutf-8z
+q/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/ProductBrand.csutf-8y
+p/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/ProductType.csutf-8Ç
+y/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Repositories/IBrandRepository.csutf-8Ñ
+{/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Repositories/IProductRepository.csutf-8Ç
+y/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Repositories/ITypesRepository.csutf-8î
+à/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/obj/Debug/net7.0/Catalog.Core.GlobalUsings.g.csutf-8§
+ò/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.csutf-8í
+Ü/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/obj/Debug/net7.0/Catalog.Core.AssemblyInfo.csutf-8

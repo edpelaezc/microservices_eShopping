@@ -1,0 +1,1 @@
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/.sonarqube/out/1
