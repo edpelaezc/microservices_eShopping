@@ -20,7 +20,7 @@ public class GetAllProductsHandler : IRequestHandler<GetAllProductsQuery, IList<
     {
         var products = await _repository.GetAllProducts();
         var response = 
-            CatalogMapper.mapper.
+            CatalogMapper.Mapper.
             Map<IList<Product>, IList<ProductDto>>(products.ToList());
 
         return response;

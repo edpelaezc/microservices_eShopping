@@ -20,7 +20,7 @@ public class GetAllTypesHandler : IRequestHandler<GetAllTypesQuery, IList<TypeDt
     {
         var types = await _repository.GetAllTypes();
         var response = 
-            CatalogMapper.mapper.
+            CatalogMapper.Mapper.
                 Map<IList<ProductType>, IList<TypeDto>>(types.ToList());
 
         return response;

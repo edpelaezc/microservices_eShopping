@@ -25,7 +25,7 @@ public class UpdateProductHandler : IRequestHandler<UpdateProductCommand, Unit>
             throw new ProductNotFoundException(request.Id);
         }
         
-        var updatedProduct = CatalogMapper.mapper.Map(request.product, product);
+        var updatedProduct = CatalogMapper.Mapper.Map(request.product, product);
         await _repository.UpdateProduct(updatedProduct);
         return Unit.Value;
     }

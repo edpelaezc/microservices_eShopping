@@ -1,0 +1,10 @@
+„
+{/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Data/BrandContextSeed.csutf-8‚
+y/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Data/CatalogContext.csutf-8ƒ
+z/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Data/ICatalogContext.csutf-8†
+}/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Data/ProductContextSeed.csutf-8ƒ
+z/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Data/TypeContextSeed.csutf-8Ž
+„/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Repositories/ProductRepository.csutf-8¨
+œ/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/obj/Debug/net7.0/Catalog.Infrastructure.GlobalUsings.g.csutf-8®
+¢/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.csutf-8¦
+š/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/obj/Debug/net7.0/Catalog.Infrastructure.AssemblyInfo.csutf-8

@@ -1,0 +1,27 @@
+Product projects
+---------------------------------------
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Catalog.Core.csproj
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Application/Catalog.Application.csproj
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.API/Catalog.API.csproj
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Catalog.Infrastructure.csproj
+
+
+Test projects
+---------------------------------------
+
+
+Invalid projects
+---------------------------------------
+{none}
+
+
+Skipped projects
+---------------------------------------
+{none}
+
+
+Excluded projects
+---------------------------------------
+{none}
+
+

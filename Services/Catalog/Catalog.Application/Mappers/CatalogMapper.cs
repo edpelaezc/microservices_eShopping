@@ -12,10 +12,10 @@ public static class CatalogMapper
             config.AddProfile<ProductMappingProfile>();
         });
 
-        var mapper = config.CreateMapper();
+        var lazyMapper = config.CreateMapper();
 
-        return mapper;
+        return lazyMapper;
     });
 
-    public static IMapper mapper => Lazy.Value;
+    public static IMapper Mapper => Lazy.Value;
 }

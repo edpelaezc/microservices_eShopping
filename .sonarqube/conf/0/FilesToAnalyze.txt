@@ -1,0 +1,11 @@
+﻿/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/BaseEntity.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/Exceptions/BadRequestException.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/Exceptions/NotFoundException.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/Exceptions/ProductNotFoundException.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/Exceptions/ResourceCreationBadRequest.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/Product.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/ProductBrand.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Entities/ProductType.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Repositories/IBrandRepository.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Repositories/IProductRepository.cs
+/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Core/Repositories/ITypesRepository.cs

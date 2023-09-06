@@ -1,0 +1,6 @@
+projectKey=eshopping
+serverUrl=http://localhost:9000
+serverVersion=10.1.0.73491
+dashboardUrl=http://localhost:9000/dashboard?id=eshopping
+ceTaskId=AYpopVTn2Vgy8P6jCzJJ
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYpopVTn2Vgy8P6jCzJJ

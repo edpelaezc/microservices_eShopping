@@ -19,7 +19,7 @@ public class GetProductHandler : IRequestHandler<GetProductQuery, ProductDto>
     public async Task<ProductDto> Handle(GetProductQuery request, CancellationToken cancellationToken)
     {
         var product = await _repository.GetProduct(request.Id);
-        var response = CatalogMapper.mapper.Map<ProductDto>(product);
+        var response = CatalogMapper.Mapper.Map<ProductDto>(product);
         return response;
     }
 }

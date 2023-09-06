@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>Catalog.Infrastructure</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>d5b5ce21-8ab2-4ec1-9e3e-e28025b871fb</ProjectGuid>
+  <FullPath>/Users/eduardopelaez/RiderProjects/microservices_eShopping/Services/Catalog/Catalog.Infrastructure/Catalog.Infrastructure.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="/Users/eduardopelaez/RiderProjects/microservices_eShopping/.sonarqube/conf/2/FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">/Users/eduardopelaez/RiderProjects/microservices_eShopping/.sonarqube/out/2/Issues.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">/Users/eduardopelaez/RiderProjects/microservices_eShopping/.sonarqube/out/2</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+  <TargetFramework>net7.0</TargetFramework>
+</ProjectInfo>
