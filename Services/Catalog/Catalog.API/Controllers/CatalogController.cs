@@ -1,4 +1,6 @@
+using System.Net;
 using Catalog.Application.Queries;
+using Catalog.Application.Responses;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +16,7 @@ public class CatalogController : ApiController
     }
     
     [HttpGet("products")]
+    [ProducesResponseType(typeof(IList<ProductDto>), (int)HttpStatusCode.OK)]
     public async Task<IActionResult> GetProducts()
     {
         var products = await _mediator.Send(new GetAllProductsQuery());

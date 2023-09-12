@@ -1,4 +1,6 @@
 using Catalog.API.Extensions;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,13 @@ if (app.Environment.IsProduction())
 
 app.UseStaticFiles();
 app.UseAuthorization();
+app.UseSwagger();
+app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "Catalog API V1"));
 app.MapControllers();
+app.MapHealthChecks("/healthCheck", new HealthCheckOptions()
+{
+    Predicate = _ => true,
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 
 app.Run();
