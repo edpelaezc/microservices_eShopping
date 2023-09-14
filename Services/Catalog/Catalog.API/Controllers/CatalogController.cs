@@ -24,7 +24,7 @@ public class CatalogController : ApiController
         return Ok(products);
     }
     
-    [HttpGet("products/{id:string}", Name = "ProductById")]
+    [HttpGet("products/{id}", Name = "ProductById")]
     [ProducesResponseType(typeof(ProductDto), (int)HttpStatusCode.OK)]
     public async Task<IActionResult> GetProductById(string id)
     {
@@ -32,7 +32,7 @@ public class CatalogController : ApiController
         return Ok(product);
     }
     
-    [HttpGet("products/[action]/{name:string}", Name = "ProductsByName")]
+    [HttpGet("products/[action]/{name}", Name = "ProductsByName")]
     [ProducesResponseType(typeof(IList<ProductDto>), (int)HttpStatusCode.OK)]
     public async Task<IActionResult> GetProductsByName(string name)
     {
@@ -40,7 +40,7 @@ public class CatalogController : ApiController
         return Ok(products);
     }
     
-    [HttpGet("products/[action]/{brand:string}", Name = "ProductsByBrand")]
+    [HttpGet("products/[action]/{brand}", Name = "ProductsByBrand")]
     [ProducesResponseType(typeof(IList<ProductDto>), (int)HttpStatusCode.OK)]
     public async Task<IActionResult> GetProductsByBrand(string brand)
     {
@@ -57,7 +57,7 @@ public class CatalogController : ApiController
         return CreatedAtRoute("ProductById", new { id = product.Id }, product);
     }
     
-    [HttpPut("products/{id:string}")]
+    [HttpPut("products/{id}")]
     [ProducesResponseType(typeof(Unit), (int)HttpStatusCode.NoContent)]
     public async Task<IActionResult> UpdateProduct(string id, [FromBody] ProductForCreationDto productForCreationDto)
     {
@@ -71,7 +71,7 @@ public class CatalogController : ApiController
         return NoContent();
     }
     
-    [HttpDelete("products/{id:string}")]
+    [HttpDelete("products/{id}")]
     [ProducesResponseType(typeof(Unit), (int)HttpStatusCode.NoContent)]
     public async Task<IActionResult> DeleteProduct(string id)
     {

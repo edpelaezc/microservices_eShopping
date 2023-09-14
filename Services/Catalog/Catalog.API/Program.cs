@@ -21,12 +21,13 @@ if (app.Environment.IsProduction())
     app.UseHsts();
 }
 
+app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthorization();
 app.UseSwagger();
 app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "Catalog API V1"));
 app.MapControllers();
-app.MapHealthChecks("/healthCheck", new HealthCheckOptions()
+app.MapHealthChecks("/health", new HealthCheckOptions()
 {
     Predicate = _ => true,
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
