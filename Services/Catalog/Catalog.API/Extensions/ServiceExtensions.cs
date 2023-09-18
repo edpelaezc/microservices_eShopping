@@ -21,9 +21,9 @@ public static class ServiceExtensions
     public static void ConfigureRepository(this IServiceCollection services)
     {
         services.AddScoped<ICatalogContext, CatalogContext>();
-        services.AddScoped<IProductRepository, ProductRepository>();
-        services.AddScoped<IBrandRepository, ProductRepository>();
-        services.AddScoped<ITypesRepository, ProductRepository>();
+        services.AddScoped<IProductRepository, CatalogRepository>();
+        services.AddScoped<IBrandRepository, CatalogRepository>();
+        services.AddScoped<ITypesRepository, CatalogRepository>();
     }
 
     public static void ConfigureHealthChecks(this IServiceCollection services, IConfiguration configuration)

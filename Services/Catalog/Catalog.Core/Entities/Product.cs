@@ -15,6 +15,6 @@ public class Product : BaseEntity
     public ProductType? Types { get; set; }
     
     [BsonRepresentation(BsonType.Decimal128)]
-    public decimal? price { get; set; }
+    public decimal? Price { get; set; }
     
 }
