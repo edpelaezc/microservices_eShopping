@@ -1,25 +1,32 @@
 using Catalog.Core.Entities;
 using Catalog.Core.Repositories;
+using Catalog.Core.RequestFeatures;
 using Catalog.Infrastructure.Data;
+using Catalog.Infrastructure.Extensions;
 using MongoDB.Driver;
 
 namespace Catalog.Infrastructure.Repositories;
 
-public class ProductRepository : IProductRepository, IBrandRepository, ITypesRepository
+public class CatalogRepository : IProductRepository, IBrandRepository, ITypesRepository
 {
     private readonly ICatalogContext _context;
 
-    public ProductRepository(ICatalogContext catalogContext)
+    public CatalogRepository(ICatalogContext catalogContext)
     {
         _context = catalogContext;
     }
     
-    public async Task<IEnumerable<Product>> GetAllProducts()
+    public async Task<IEnumerable<Product>> GetAllProducts(ProductParameters parameters)
     {
-        return await _context
+        // filter firts within mongodb api, instead of read all products and then filter.
+        var products = await _context
             .Products
-            .Find(p => true)
+            .Filter(parameters)
             .ToListAsync();
+        
+        var response = products.AsQueryable().Sort(parameters.Sort).ToList();
+        
+        return PagedList<Product>.ToPagedList(response, parameters.PageNumber, parameters.PageSize);
     }
 
     public async Task<Product> GetProduct(string id)
