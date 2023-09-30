@@ -9,18 +9,18 @@ namespace Discount.Application.Handlers;
 
 public class GetDiscountQueryHandler : IRequestHandler<GetDiscountQuery, CouponModel>
 {
-    private readonly IDiscountRepository _discountRepository;
+    private readonly IDiscountRepository _repository;
     private readonly IMapper _mapper;
 
-    public GetDiscountQueryHandler(IDiscountRepository discountRepository, IMapper mapper)
+    public GetDiscountQueryHandler(IDiscountRepository repository, IMapper mapper)
     {
-        _discountRepository = discountRepository;
+        _repository = repository;
         _mapper = mapper;
     }
 
     public async Task<CouponModel> Handle(GetDiscountQuery request, CancellationToken cancellationToken)
     {
-        var coupon = await _discountRepository.GetDiscount(request.productName);
+        var coupon = await _repository.GetDiscount(request.productName);
         
         if (coupon is null)
         {

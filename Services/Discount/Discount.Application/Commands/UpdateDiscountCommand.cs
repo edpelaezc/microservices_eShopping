@@ -4,4 +4,4 @@ using MediatR;
 
 namespace Discount.Application.Commands;
 
-public sealed record CreateDiscountCommand(CouponDto Coupon): IRequest<CouponModel>;
+public sealed record UpdateDiscountCommand(int Id, CouponForUpdateDto CouponForUpdateDto) : IRequest<Unit>;
