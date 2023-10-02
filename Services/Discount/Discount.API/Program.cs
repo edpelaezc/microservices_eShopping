@@ -27,4 +27,5 @@ app.MapGet("/", async context =>
         "Communication with gRPC endpoints must be made through a gRPC client.");
 });
 
-app.MigrateDatabase<Program>().Run();
+app.MigrateDatabase<Program>();
+app.Run();
