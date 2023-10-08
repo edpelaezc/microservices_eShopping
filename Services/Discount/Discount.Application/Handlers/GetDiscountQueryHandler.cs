@@ -10,12 +10,10 @@ namespace Discount.Application.Handlers;
 public class GetDiscountQueryHandler : IRequestHandler<GetDiscountQuery, CouponModel>
 {
     private readonly IDiscountRepository _repository;
-    private readonly IMapper _mapper;
 
     public GetDiscountQueryHandler(IDiscountRepository repository, IMapper mapper)
     {
         _repository = repository;
-        _mapper = mapper;
     }
 
     public async Task<CouponModel> Handle(GetDiscountQuery request, CancellationToken cancellationToken)
@@ -28,7 +26,13 @@ public class GetDiscountQueryHandler : IRequestHandler<GetDiscountQuery, CouponM
                 $"Discount with the product name = {request.productName} not found"));
         }
 
-        var response = _mapper.Map<CouponModel>(coupon);
+        var response = new CouponModel
+        {
+            Id = coupon.Id,
+            Amount = coupon.Amount,
+            Description = coupon.Description,
+            ProductName = coupon.ProductName
+        };
         
         return response;
     }
