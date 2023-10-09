@@ -17,10 +17,10 @@ message GetDiscountRequest {
 }
 
 message CouponModel {
-  int32 id = 1;
-  string productName = 2;
-  string description = 3;
-  int32 amount = 4;
+  int32 Id = 1;
+  string ProductName = 2;
+  string Description = 3;
+  int32 Amount = 4;
 }
 
 message CreateDiscountRequest {
