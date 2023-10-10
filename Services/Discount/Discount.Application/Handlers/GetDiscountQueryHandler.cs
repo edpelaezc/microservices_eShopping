@@ -1,4 +1,3 @@
-using AutoMapper;
 using Discount.Application.Queries;
 using Discount.Core.Repositories;
 using Discount.Grpc.Protos;
@@ -11,7 +10,7 @@ public class GetDiscountQueryHandler : IRequestHandler<GetDiscountQuery, CouponM
 {
     private readonly IDiscountRepository _repository;
 
-    public GetDiscountQueryHandler(IDiscountRepository repository, IMapper mapper)
+    public GetDiscountQueryHandler(IDiscountRepository repository)
     {
         _repository = repository;
     }
@@ -25,7 +24,7 @@ public class GetDiscountQueryHandler : IRequestHandler<GetDiscountQuery, CouponM
             throw new RpcException(new Status(StatusCode.NotFound,
                 $"Discount with the product name = {request.productName} not found"));
         }
-
+        
         var response = new CouponModel
         {
             Id = coupon.Id,
