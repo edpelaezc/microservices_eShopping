@@ -21,12 +21,12 @@ public class UpdateOrderHandler : IRequestHandler<UpdateOrderCommand, Unit>
     {
         var order = _repository
             .Order
-            .FindByCondition(o => o.Id.Equals(request.OrderDto.Id), true)
+            .FindByCondition(o => o.Id.Equals(request.id), true)
             .SingleOrDefault();
 
         if (order is null)
         {
-            throw new OrderNotFoundException(request.OrderDto.Id);
+            throw new OrderNotFoundException(request.id);
         }
 
         _mapper.Map(request.OrderDto, order);

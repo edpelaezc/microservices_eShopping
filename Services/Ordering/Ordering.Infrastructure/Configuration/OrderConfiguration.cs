@@ -1,26 +1,18 @@
-using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Ordering.Core.Entities;
 
-namespace Ordering.Infrastructure.Data;
+namespace Ordering.Infrastructure.Configuration;
 
-public static class OrderContextSeed
+public class OrderConfiguration : IEntityTypeConfiguration<Order>
 {
-    public static async Task SeedAsync(OrderContext orderContext, ILogger<OrderContext> logger)
+    public void Configure(EntityTypeBuilder<Order> builder)
     {
-        if (!orderContext.Orders.Any())
-        {
-            orderContext.Orders.AddRange(GetOrders());
-            await orderContext.SaveChangesAsync();
-            logger.LogInformation($"Ordering Database: {typeof(OrderContext).Name} seeded.");
-        }
-    }
-    
-    private static IEnumerable<Order> GetOrders()
-    {
-        return new List<Order>
-        {
-            new()
+        builder.HasData
+        (
+            new Order()
             {
+                Id = 1,
                 UserName = "edpelaezc",
                 FirstName = "Eduardo",
                 LastName = "Pelaez",
@@ -37,8 +29,9 @@ public static class OrderContextSeed
                 CVV = "123",
                 PaymentMethod = 1,
                 LastModifiedBy = "ed",
+                CreatedDate = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Local),
                 LastModifiedDate = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Local)
             }
-        };
+        );
     }
 }

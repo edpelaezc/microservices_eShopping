@@ -8,13 +8,13 @@ namespace Ordering.Application.Extensions;
 
 public static class ApplicationServicesExtension
 {
-    public static IServiceCollection AddServices(this IServiceCollection services)
+    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
-        services.AddMediatR(Assembly.GetExecutingAssembly());
-        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        services.AddMediatR(x=> x.RegisterServicesFromAssemblies(typeof(IAssemblyReference).Assembly));
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehavior<,>));
+        services.AddValidatorsFromAssembly(typeof(IAssemblyReference).Assembly);
         return services;
     }
 }

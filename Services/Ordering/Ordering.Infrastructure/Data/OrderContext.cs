@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Ordering.Core.Common;
 using Ordering.Core.Entities;
+using Ordering.Infrastructure.Configuration;
 
 namespace Ordering.Infrastructure.Data;
 
@@ -8,6 +9,13 @@ public class OrderContext : DbContext
 {
     public OrderContext(DbContextOptions options):base(options)
     {
+    }
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Order>().Property(o => o.TotalPrice).HasPrecision(18, 2);
+        modelBuilder.ApplyConfiguration(new OrderConfiguration());
     }
     
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
