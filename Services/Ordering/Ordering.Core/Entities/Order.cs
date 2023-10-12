@@ -5,6 +5,7 @@ namespace Ordering.Core.Entities;
 public class Order : EntityBase
 {
     public string? UserName { get; set; }
+    
     public decimal? TotalPrice { get; set; }
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
@@ -16,6 +17,6 @@ public class Order : EntityBase
     public string? CardName { get; set; }
     public string? CardNumber { get; set; }
     public string? Expiration { get; set; }
-    public string? Cvv { get; set; }
+    public string? CVV { get; set; }
     public int? PaymentMethod { get; set; }
 }

@@ -16,6 +16,7 @@ public static class InfrastructureExtension
             configuration.GetConnectionString("OrderingConnectionString")));
         services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
         services.AddScoped<IOrderRepository, OrderRepository>();
+        services.AddScoped<IRepositoryManager, RepositoryManager>();
         
         return services;
     }
