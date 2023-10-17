@@ -11,5 +11,5 @@ public record ProductDto
     public string? ImageFile { get; init; }
     public ProductBrand? Brands { get; init; }
     public ProductType? Types { get; init; }
-    public decimal? price { get; init; }
+    public int? price { get; init; }
 }
