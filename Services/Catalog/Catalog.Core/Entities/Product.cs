@@ -14,7 +14,7 @@ public class Product : BaseEntity
     public ProductBrand? Brands { get; set; }
     public ProductType? Types { get; set; }
     
-    [BsonRepresentation(BsonType.Decimal128)]
-    public decimal? Price { get; set; }
+    [BsonRepresentation(BsonType.Int32, AllowTruncation=true)]
+    public int? price { get; set; }
     
 }
