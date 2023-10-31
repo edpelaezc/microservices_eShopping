@@ -73,7 +73,7 @@ public class CatalogController : ApiController
     /// </summary>
     /// <param name="productForCreationDto"></param>
     /// <returns>Newly created product</returns>
-    [HttpPost]
+    [HttpPost("products")]
     [ProducesResponseType(typeof(ProductDto), (int)HttpStatusCode.Created)]
     public async Task<IActionResult> CreateProduct([FromBody] ProductForCreationDto productForCreationDto)
     {
