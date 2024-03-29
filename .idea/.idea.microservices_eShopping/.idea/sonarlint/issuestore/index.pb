@@ -251,3 +251,11 @@ X
 (APIGateways/Ocelot.APIGateway/Startup.cs,8/9/896ace4d4a296eadea279673c77cd2e892d4a711
 e
 5APIGateways/Ocelot.APIGateway/ocelot.Development.json,7/c/7c4b5a879e47d91481377d6061f9ef197ec81921
+j
+:Infrastructure/microservices_eShopping.Identity/Program.cs,8/7/87829066cfe6c062f0ff5991b873c9d2c57ff70b
+j
+:Infrastructure/microservices_eShopping.Identity/Startup.cs,e/d/edbeec0e5d71e5e83b253a880d926f5431de5cf8
+i
+9Infrastructure/microservices_eShopping.Identity/Config.cs,7/6/7637f8fe46181483ffe43d8aefb82d2d721552b7
+w
+GInfrastructure/microservices_eShopping.Identity/Quickstart/TestUsers.cs,3/6/3616da131fd96d89dd067f0e1d62dd5327316172
