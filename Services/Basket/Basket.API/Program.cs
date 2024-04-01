@@ -3,7 +3,10 @@ using Basket.Application.GrpcService;
 using Discount.Grpc.Protos;
 using HealthChecks.UI.Client;
 using MassTransit;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,7 +30,18 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>
 
 builder.Services.AddMediatR(x=> x.RegisterServicesFromAssemblies(typeof(Basket.Application.IAssemblyReference).Assembly));
 builder.Services.AddApiVersioning();
-builder.Services.AddControllers();
+
+// identity server
+var userPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+
+builder.Services.AddControllers(options => options.Filters.Add( new AuthorizeFilter(userPolicy)));
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.Authority = "https://localhost:9009/";
+        options.Audience = "Basket";
+    });
 
 var app = builder.Build();
 
@@ -39,6 +53,7 @@ if (app.Environment.IsProduction())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseAuthentication();
 app.UseAuthorization();
 app.UseSwagger();
 app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "Basket API V1"));

@@ -29,6 +29,22 @@ namespace IdentityServerHost.Quickstart.UI
                 {
                     new TestUser
                     {
+                        SubjectId = "f9e8f834-7c09-4358-b103-fa3ea32fc42a",
+                        Username = "edpelaezc",
+                        Password = "admin",
+                        Claims =
+                        {
+                            new Claim(JwtClaimTypes.Name, "Eduardo Pelaez"),
+                            new Claim(JwtClaimTypes.GivenName, "Eduardo"),
+                            new Claim(JwtClaimTypes.FamilyName, "Pelaez"),
+                            new Claim(JwtClaimTypes.Email, "eduardo@email.com"),
+                            new Claim(JwtClaimTypes.EmailVerified, "true", ClaimValueTypes.Boolean),
+                            new Claim(JwtClaimTypes.WebSite, "http://eduardo.com"),
+                            new Claim(JwtClaimTypes.Address, JsonSerializer.Serialize(address), IdentityServerConstants.ClaimValueTypes.Json)
+                        }
+                    },
+                    new TestUser
+                    {
                         SubjectId = "818727",
                         Username = "alice",
                         Password = "alice",
