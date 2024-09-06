@@ -22,7 +22,9 @@ namespace microservices_eShopping.Identity
             new ApiScope[]
             {
                 new ApiScope("CatalogApi"),
-                new ApiScope("BasketApi")
+                new ApiScope("BasketApi"),
+                new ApiScope("CatalogApi.Read"),
+                new ApiScope("CatalogApi.Write"),
             };
 
         public static IEnumerable<ApiResource> ApiResources =>
@@ -49,7 +51,7 @@ namespace microservices_eShopping.Identity
                     ClientId = "CatalogAPIClient",
                     ClientSecrets = {new Secret("e560086e-74b8-463b-bd76-525598f9414f".Sha256())},
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    AllowedScopes = {"CatalogApi", "BasketApi"}
+                    AllowedScopes = {"CatalogApi.Read", "CatalogApi.Write", "CatalogApi"}
                 }
             };
     }

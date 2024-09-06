@@ -1,6 +1,11 @@
 version: '3.4'
 
 services:
+  reverseproxy:
+    build:
+      context: .
+      dockerfile: APIGateways/nginx.Dockerfile
+      
   catalogdb:
     image: mongo
     
@@ -46,11 +51,17 @@ services:
       context: .
       dockerfile: Services/Ordering/Ordering.API/Dockerfile    
   
-  ocelotapigw:
-    image: ${DOCKER_REGISTRY-}ocelotapigw
+  #ocelotapigw:
+  #  image: ${DOCKER_REGISTRY-}ocelotapigw
+  #  build:
+  #    context: .
+  #    dockerfile: APIGateways/Ocelot.APIGateway/Dockerfile
+      
+  identityserver:
+    image: ${DOCKER_REGISTRY-}identityserver
     build:
       context: .
-      dockerfile: APIGateways/Ocelot.APIGateway/Dockerfile
+      dockerfile: Infrastructure/microservices_eShopping.Identity/Dockerfile      
       
 volumes:
   mongo_data:

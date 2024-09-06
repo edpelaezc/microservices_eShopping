@@ -11,10 +11,12 @@ namespace Catalog.API.Controllers;
 public class CatalogController : ApiController
 {
     private readonly IMediator _mediator;
-    
-    public CatalogController(IMediator mediator)
+    private readonly ILogger<CatalogController> _logger;
+
+    public CatalogController(IMediator mediator, ILogger<CatalogController> logger)
     {
         _mediator = mediator;
+        _logger = logger;
     }
     
     /// <summary>
@@ -26,6 +28,7 @@ public class CatalogController : ApiController
     public async Task<IActionResult> GetProducts([FromQuery] ProductParameters requestParameters)
     {
         var products = await _mediator.Send(new GetAllProductsQuery(requestParameters));
+        _logger.LogInformation("Retrieved all products.");
         return Ok(products);
     }
     

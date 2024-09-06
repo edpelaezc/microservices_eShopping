@@ -54,6 +54,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocelot.APIGateway", "APIGat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "microservices_eShopping.Identity", "Infrastructure\microservices_eShopping.Identity\microservices_eShopping.Identity.csproj", "{FEC724E6-76A5-4958-88FC-DDEA122AC16A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx", "nginx", "{2BFCA8A6-5D31-414E-91F8-69E28442B7F0}"
+	ProjectSection(SolutionItems) = preProject
+		APIGateways\nginx.Dockerfile = APIGateways\nginx.Dockerfile
+		APIGateways\nginx.local.conf = APIGateways\nginx.local.conf
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logging", "Infrastructure\Common.Logging\Common.Logging.csproj", "{3E295A2B-408E-4BF0-AFD9-AC00B0216F14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +91,8 @@ Global
 		{A333675B-83A8-44CA-89AB-0C698B1DAFB2} = {99B38AA3-A979-4810-A739-71A3CF5492E8}
 		{73ADEB03-E3BB-477E-8CD8-23CB5FE17120} = {CEF67770-AA6C-4D8E-A520-504A7E7D0E8D}
 		{FEC724E6-76A5-4958-88FC-DDEA122AC16A} = {99B38AA3-A979-4810-A739-71A3CF5492E8}
+		{2BFCA8A6-5D31-414E-91F8-69E28442B7F0} = {CEF67770-AA6C-4D8E-A520-504A7E7D0E8D}
+		{3E295A2B-408E-4BF0-AFD9-AC00B0216F14} = {99B38AA3-A979-4810-A739-71A3CF5492E8}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6B886FC1-CF3C-4692-BFE9-31E8BAD12FC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -161,5 +171,9 @@ Global
 		{FEC724E6-76A5-4958-88FC-DDEA122AC16A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEC724E6-76A5-4958-88FC-DDEA122AC16A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEC724E6-76A5-4958-88FC-DDEA122AC16A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E295A2B-408E-4BF0-AFD9-AC00B0216F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E295A2B-408E-4BF0-AFD9-AC00B0216F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E295A2B-408E-4BF0-AFD9-AC00B0216F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E295A2B-408E-4BF0-AFD9-AC00B0216F14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
