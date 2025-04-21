@@ -87,7 +87,9 @@ services:
       - "DatabaseSettings__BrandsCollection=Brands"
       - "DatabaseSettings__TypesCollection=Types"
       - "Auth__Authority=https://id-local.eshopping.com:44344"
-      - "Auth__ApiName=Catalog"
+      - "Auth__ApiName=Catalog"      
+    extra_hosts:
+      - "id-local.eshopping.com:host-gateway"
     depends_on:
       - catalogdb
     ports:

@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Serilog; 
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog(Logging.ConfigureLogger);
@@ -35,9 +36,29 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     {
         options.Authority = builder.Configuration.GetValue<string>("Auth:Authority");
         options.Audience = builder.Configuration.GetValue<string>("Auth:ApiName");
-        options.MetadataAddress = "https://id-local.eshopping.com:44344/.well-known/openid-configuration";
-        options.Configuration = new OpenIdConnectConfiguration();
         options.IncludeErrorDetails = true;
+
+        options.BackchannelHttpHandler = new HttpClientHandler
+        {
+            ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+        };
+
+        options.Events = new JwtBearerEvents
+        {
+            OnAuthenticationFailed = context =>
+            {
+                var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
+                logger.LogError(context.Exception, "Authentication failed: {Message}", context.Exception.Message);
+                return Task.CompletedTask;
+            },
+            OnTokenValidated = context =>
+            {
+                var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
+                logger.LogInformation("Token validated: {Subject}", context.Principal?.Identity?.Name);
+                return Task.CompletedTask;
+            }
+        };
+
     });
 
 builder.Services.AddAuthorization(options =>
