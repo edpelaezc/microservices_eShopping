@@ -51,7 +51,7 @@ namespace microservices_eShopping.Identity
                     ClientId = "CatalogAPIClient",
                     ClientSecrets = {new Secret("e560086e-74b8-463b-bd76-525598f9414f".Sha256())},
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    AllowedScopes = {"CatalogApi.Read", "CatalogApi.Write", "CatalogApi", "Catalog"}
+                    AllowedScopes = {"CatalogApi.Read", "CatalogApi.Write", "CatalogApi", "BasketApi", "Catalog"}
                 }
             };
     }

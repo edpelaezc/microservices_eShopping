@@ -101,11 +101,14 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://*:9001
       - "CacheSettings__ConnectionString=basketdb:6379"
-      - "GrpcSettings__DiscountUrl=http://discount.api"
+      - "GrpcSettings__DiscountUrl=http://discount.api:9002"
       - "EventBusSettings__HostAddress=amqp://guest:guest@rabbitmq:5672"
+    extra_hosts:
+      - "id-local.eshopping.com:host-gateway"      
     depends_on:
       - basketdb
       - rabbitmq
+      - discount.api
     ports:
       - "9001:9001"
         
@@ -115,6 +118,8 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://*:9002
       - "DatabaseSettings__ConnectionString=Server=discountdb;Port=5432;Database=DiscountDb;User Id=admin;Password=Password@1;"      
+    extra_hosts:
+      - "id-local.eshopping.com:host-gateway"      
     depends_on:
       - discountdb
     ports:
@@ -127,6 +132,8 @@ services:
       - ASPNETCORE_URLS=http://*:9003
       - "ConnectionStrings__OrderingConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=EdSQLonDocker2022!;TrustServerCertificate=true"
       - "EventBusSettings__HostAddress=amqp://guest:guest@rabbitmq:5672"
+    extra_hosts:
+      - "id-local.eshopping.com:host-gateway"      
     depends_on:
       - orderdb
       - rabbitmq
