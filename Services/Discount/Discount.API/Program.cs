@@ -1,9 +1,12 @@
+using Common.Logging;
 using Discount.API.Extensions;
 using Discount.API.Services;
 using Discount.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseSerilog(Logging.ConfigureLogger);
 
 builder.Services.ConfigureRepository();
 builder.Services.AddMediatR(x=> x.RegisterServicesFromAssemblies(typeof(Discount.Application.IAssemblyReference).Assembly));

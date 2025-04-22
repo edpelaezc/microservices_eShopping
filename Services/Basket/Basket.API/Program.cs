@@ -1,5 +1,6 @@
 using Basket.API.Extensions;
 using Basket.Application.GrpcService;
+using Common.Logging;
 using Discount.Grpc.Protos;
 using HealthChecks.UI.Client;
 using MassTransit;
@@ -9,9 +10,10 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Host.UseSerilog(Logging.ConfigureLogger);
 builder.Services.ConfigureHealthChecks(builder.Configuration);
 builder.Services.AddVersionedApiExplorer(options => { options.GroupNameFormat = "'v'VVV"; options.SubstituteApiVersionInUrl = true; options.AssumeDefaultVersionWhenUnspecified = true; }); 
 

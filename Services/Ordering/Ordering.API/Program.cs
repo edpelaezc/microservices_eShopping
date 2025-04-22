@@ -1,3 +1,4 @@
+using Common.Logging;
 using EventBus.Messages.Common;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -9,8 +10,11 @@ using Ordering.Application.Extensions;
 using Ordering.Infrastructure.Data;
 using Ordering.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseSerilog(Logging.ConfigureLogger);
+
 builder.Services.AddVersionedApiExplorer(options => { options.GroupNameFormat = "'v'VVV"; options.SubstituteApiVersionInUrl = true; options.AssumeDefaultVersionWhenUnspecified = true; });
 
 builder.Services.AddControllers();
